@@ -16,8 +16,8 @@ class Transfer
     if @sender.balance > @amount && @status == "pending"
       @sender.balance -= @amount
       @receiver.balance += @amount
-      @sender.valid
-      @receiver.valid
+      @sender.valid == true
+      @receiver.valid == true
       @status = "complete"
     else
       @status = "rejected"
